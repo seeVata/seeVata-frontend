@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 import "../components/shared/theme.css";
 
-import { ReactComponent as KakaoLogin } from "../assets/img/kakaoLogin.svg";
-// import { ReactComponent as Logo } from "../assets/img/logo.png";
+// import { ReactComponent as KakaoLogin } from "../assets/img/kakaoLogin.svg";
+import kakaoLogin from "../assets/img/kakaoLogin.png";
+import naverLogin from "../assets/img/naverLogin.png";
+import googleLogin from "../assets/img/googleLogin.png";
 import logo from "../assets/img/logo.png";
 
 const Login = () => {
@@ -18,15 +20,28 @@ const Login = () => {
       <Title>seeVata</Title>
       <LogoImg src={logo} alt="임시로고" />
       <Content>seeVata</Content>
-      <KakaoLoginBtn>
-        <KakaoLogin onClick={handleLogin} />
-      </KakaoLoginBtn>
+      <LoginBtn>
+        <NaverLoginImg src={naverLogin} alt="naverLogin" />
+        <KakaoLoginImg src={kakaoLogin} alt="kakaoLogin" />
+        <GoogleLoginImg src={googleLogin} alt="googleLogin" />
+      </LoginBtn>
     </div>
   );
 };
 
 let Title = styled.div`
   margin-top: 21vh;
+  width: 134px;
+  height: 36px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 100%;
+  text-align: center;
+
+  color: #272a33;
 `;
 
 let LogoImg = styled.img``;
@@ -43,11 +58,16 @@ let Content = styled.div`
   margin-top: 15vh;
 `;
 
-let KakaoLoginBtn = styled.div`
+let LoginBtn = styled.div`
+  width: 208px;
   margin-top: 2.8vh;
   &:hover {
     cursor: pointer;
   }
 `;
+
+let NaverLoginImg = styled.img``;
+let KakaoLoginImg = styled.img``;
+let GoogleLoginImg = styled.img``;
 
 export default Login;
